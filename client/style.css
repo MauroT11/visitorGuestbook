@@ -1,5 +1,5 @@
 * {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family:monospace;
   box-sizing: border-box;
   margin: 0;
 }
@@ -26,4 +26,8 @@ form {
   align-items: center;
   /* max-width: 20%; */
   gap: 0.5rem;
+}
+
+.messageBoard {
+
 }
