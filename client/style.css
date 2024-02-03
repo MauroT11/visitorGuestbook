@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 * {
   font-family:monospace;
   box-sizing: border-box;
   margin: 0;
 }
+
+
 
 body {
   margin: 0;
@@ -14,10 +18,34 @@ body {
   flex-direction: column;
 }
 
+header {
+  position: fixed;
+  width: 100vw;
+  padding-top: 1rem;
+  border-bottom: 5px solid black;
+  background-color: azure;
+  z-index: 1;
+}
+
 #app {
-  margin-top: 2rem;
+  padding: 40vh 5rem;
+  height: 100vh;
   justify-content: center;
-  display: f;
+  flex: 1;
+  flex-direction: row;
+  position: fixed;
+  border-right: solid 5px black;
+  background-color: rgb(191, 191, 191);
+}
+
+#app label {
+  font-size: 1.5rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 1rem;
 }
 
 form {
@@ -26,8 +54,85 @@ form {
   align-items: center;
   /* max-width: 20%; */
   gap: 0.5rem;
+  margin: 1rem 0;
 }
 
-.messageBoard {
+#submit {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
 
+#submit:active {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  /* border-bottom: 3px solid black; */
+  padding-bottom: 1rem;
+  font-size: 3rem;
+}
+
+#messageBoard {
+  display: flex;
+  flex: 3;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 6rem;
+  position: absolute;
+  left: 45%
+}
+
+.guestDiv {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  align-items: center;
+}
+
+.guestDiv h3 {
+  font-size: 2rem;
+}
+
+.guestDiv h3::after {
+  font-size: 1.5rem;
+  content: " said:";
+}
+
+.message {
+  font-size: 1.75rem;
+  font-family: 'Delicious Handrawn', cursive;
+  font-weight: 400;
+  color: gray;
+}
+
+.likesTxt {
+  font-size: 1.5rem;
+}
+
+.likesTxt::after{
+  content: "👍|";
+}
+
+.likeBtn {
+  background-color: green;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.likeBtn:active {
+  background-color: white;
+}
+
+.delBtn {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.delBtn:active {
+  background-color: red;
 }

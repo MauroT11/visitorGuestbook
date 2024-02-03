@@ -5,11 +5,12 @@ const db = new Database('database.db')
 db.exec(`CREATE TABLE IF NOT EXISTS guests (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
-    message TEXT
+    message TEXT,
+    likes INTEGER
 )`)
 
-db.exec(`INSERT INTO guests (name, message) VALUES 
-    ('John Doe', 'Great party!'),
-    ('Jane Doe', 'Had a great time.'),
-    ('Robert Smith', 'When is the next party?')
+db.exec(`INSERT INTO guests (name, message, likes) VALUES 
+    ('John Doe', 'Great party!', 9),
+    ('Jane Doe', 'Had a great time.', 3),
+    ('Robert Smith', 'When is the next party?', 0)
 `)
