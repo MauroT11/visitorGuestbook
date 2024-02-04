@@ -27,10 +27,13 @@ app.post('/guest', (req, res) => {
     try {
         const name = req.body.messages.name
         const message = req.body.messages.message
+        const date = req.body.date
+        console.log(date)
         // console.log(req.body.messages.name)
 
-        const newMessage = db.prepare(`INSERT INTO guests (name, message) VALUES (?, ?)`).run(name, message)
-        console.log(newMessage)
+        const newMessage = db.prepare(`INSERT INTO guests (name, message, likes, date) VALUES (?, ?, 0, ?)`).run(name, message, date)
+        // console.log(newMessage)
+
         res.status(200).json(newMessage)
     } catch (err) {
         res.status(500).json({error: err})
@@ -41,10 +44,12 @@ app.put('/guest/likes/:id&:likes', (req, res) => {
     try {
         const id = req.params.id
         let likes = req.params.likes
+
         likes++
-        console.log(likes)
+
         const updateLikes = db.prepare(`UPDATE guests SET likes = ? WHERE id = ?`).run(likes, id)
-        console.log(updateLikes)
+        // console.log(updateLikes)
+
         res.status(204).json({message: updateLikes})
     } catch (err) {
         res.status(500).json({error: err})
@@ -55,6 +60,7 @@ app.delete('/guest/:id', (req, res) => {
     try {
         const id = req.params.id
         const delGuest = db.prepare(`DELETE FROM guests WHERE id = ?`).run(id)
+
         res.status(200).json({guestDeleted: delGuest})
     } catch (err) {
         res.status(500).json({error: err})
