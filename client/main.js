@@ -1,9 +1,9 @@
 const form = document.querySelector('form')
 const messageBoard = document.getElementById('messageBoard')
-const serverURL = 'http://localhost:9090'
+const serverURL = import.meta.env.VITE_ServerURL
 
 function handleMessage(e) {
-  e.preventDefault()
+  // e.preventDefault()
 
   const formData = new FormData(form)
   const messages = Object.fromEntries(formData)
@@ -26,6 +26,7 @@ function handleMessage(e) {
     })
 
   }
+
 
   
 }

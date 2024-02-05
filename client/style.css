@@ -27,7 +27,7 @@ header {
 
 #Add {
   margin-top: 20vh;
-  padding: 10vh 3rem;
+  padding: 5vh 3rem;
   justify-content: center;
   left: 1%;
   flex-direction: row;
@@ -270,9 +270,18 @@ h1 {
     top: 3rem;
   }
   .guestDiv {
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
   .date{
+    font-size: 1.25rem;
+  }
+  .name{
+    font-size: 1rem;
+  }
+  .message {
+    font-size: 1.5rem;
+  }
+  .likesTxt {
     font-size: 1.5rem;
   }
   .guestDiv h3 {
